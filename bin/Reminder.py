@@ -7,7 +7,6 @@ import win32gui_struct
 import win32gui
 
 import time
-from win10toast import ToastNotifier
 import threading
 import sys
 from bin.control import DEBUG
