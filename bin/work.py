@@ -82,7 +82,8 @@ def get_course(way_ID, course_ID):
     from datetime import date
     from datetime import datetime
     from datetime import timedelta
-    from bin.control import Early_days
+    if __name__ == '__main__': from control import Early_days
+    else: from bin.control import Early_days
 
     now = datetime.now()
 
