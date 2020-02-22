@@ -1,6 +1,6 @@
 
 import os
-from control import Early
+from bin.control import Early_days
 
 try:
     course_time = {}
@@ -86,7 +86,7 @@ def get_course(way_ID, course_ID):
 
     now = datetime.now()
 
-    if(Early != 0): now += timedelta(days = Early)
+    if(Early_days != 0): now += timedelta(days = Early_days)
 
     print('当前时间为：' + now.strftime('%F') , now.strftime('%T'))
 

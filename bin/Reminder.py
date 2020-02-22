@@ -10,7 +10,7 @@ import time
 from win10toast import ToastNotifier
 import threading
 import sys
-from control import DEBUG
+from bin.control import DEBUG
 
 Main = None
 
@@ -295,7 +295,8 @@ class myThread (threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.is_running = True
-        self.auto_website_open = False
+        self.auto_website_open = True
+        # self.auto_website_open = False
 
     def stop(self):
         self.is_running = False
@@ -308,21 +309,50 @@ class myThread (threading.Thread):
 
         if DEBUG: print ("开始线程")
 
+        import bin.work as work
+        from datetime import datetime as dt 
+        from datetime import timedelta 
+        from bin.control import Early_hours
+        from bin.control import Early_minutes
+        from bin.control import DEBUG2
+
         self.t = TestTaskbarIcon()
-        self.t.showMsg("Course Reminder", "程序已最小化到托盘")
-
-        import work
-
         tmp = work.get_course(1, 0)
+        if DEBUG2: print(tmp)
 
-        # print(tmp)
-
+        flg = 1
+        pre = set()
         while(1):
 
             if self.is_running == False:
                 break
+            
+            now_time = (dt.now() + timedelta(hours = Early_hours, minutes = Early_minutes))
+            now_time = tuple(map(int,[now_time.strftime("%H"),now_time.strftime("%M")]))
+            if DEBUG2: print("now_time", now_time)
+            now_time = (now_time[0]-1)*60+now_time[1]
 
-            # 提醒功能
+            for _ in tmp:
+
+                if _[3] in pre: continue
+                aim_time = work.course_time[str(_[2])][0]
+                aim_time = tuple(map(int,aim_time.split(":")))
+                if DEBUG2: print("aim_time", aim_time)
+                aim_time = (aim_time[0]-1)*60+aim_time[1]
+                
+                if(aim_time - 5 <= now_time and now_time <= aim_time + 5):
+                    self.t.showMsg("Course Reminder", _[3] + "即将开始")
+                    if self.auto_website_open:
+                        import webbrowser
+                        webbrowser.open(_[4], new=0, autoraise=True)
+
+                    pre.add(_[3])
+                    flg = 0
+                    break
+
+            if flg == 1: 
+                self.t.showMsg("Course Reminder", "程序已最小化到托盘")
+                flg = 0
 
             time.sleep(10)
         if DEBUG: print ("退出线程")
@@ -376,8 +406,4 @@ class _Main:
 
 if __name__ == '__main__':
 
-    import multiprocessing
-    multiprocessing.freeze_support()
-
-    Main = _Main()
-    Main.main()
+    pass

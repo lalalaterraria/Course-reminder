@@ -6,24 +6,21 @@
 
     安装python后直接双击main.py直接运行即可。
 
-## 配置
-
-    $res$ 目录下的 $time.csv$ 为时间表，$course.csv$为课表，可自行修改。
-    csv文件可直接用Office或者WPS打开。
-
-    $course.cvs$的下的开课链接需要自行修改，默认是百度。
-
 ## 功能
 
     课程查询
-    到点提醒上课 （快写好了，下午打完训练就更新）
+    到点提醒上课
     可选择是否自动打开网页
 
-## 以后maybe会增加功能更新
+## 配置
 
-    注：以下功能均需要账号信息，风险较大，后果自负，预计自用
+    course.cvs的下的开课链接需要自行修改，默认是百度。
+    course.cvs中与课表不符合的课程请自行修改。
+    csv文件可直接用Office或者WPS打开。
+    或者直接nodepad打开，编码为GB 2312
 
-    汇总全部课程QQ群的信息一并查看。
-    自动化播放加打卡签到。
+    自动打开网页功能需右键托盘在选项中关闭。
 
-    
+    如需开机自启请复制main.py的快捷方式至 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+
+

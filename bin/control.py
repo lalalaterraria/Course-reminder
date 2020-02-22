@@ -1,2 +1,10 @@
+DEBUG = True
 DEBUG = False
-Early = 2 # 假设时间是实际时间加上Early天
+DEBUG2 = True
+DEBUG2 = False
+Early_days = 2
+Early_days = 0
+Early_hours = -6
+Early_hours = 0
+Early_minutes = -5
+Early_minutes = 0
