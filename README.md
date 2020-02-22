@@ -11,7 +11,7 @@
 
 ## 功能
 
-    课程查询
+    课程查询：右键托盘，单机"课程查询"选项
     到点提醒上课
     可选择是否自动打开网页
 
@@ -22,6 +22,6 @@
     csv文件可直接用Office或者WPS打开。
     或者直接nodepad打开，编码为GB 2312
 
-    自动打开网页功能可右键托盘在选项中关闭。
+    自动打开网页功能可右键托盘在"自动打开网页"选项中关闭。
 
     如需开机自启请复制main.py的快捷方式至 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
