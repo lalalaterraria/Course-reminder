@@ -4,7 +4,7 @@
 
 # 运行方法
 
-    安装python后直接双击main.py直接运行即可。
+    安装python后直接双击main.pyw直接运行即可。
 
 ## 功能
 
