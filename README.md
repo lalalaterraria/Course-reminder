@@ -2,7 +2,7 @@
 
 网课时代的实用小程序(x
 
-# 运行方法
+## 运行方法
 
     安装python后直接双击main.pyw直接运行即可。
 
@@ -22,5 +22,3 @@
     自动打开网页功能需右键托盘在选项中关闭。
 
     如需开机自启请复制main.py的快捷方式至 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
-
-

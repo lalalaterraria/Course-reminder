@@ -1,6 +1,5 @@
 
 import os
-from bin.control import Early_days
 
 try:
     course_time = {}
@@ -83,6 +82,7 @@ def get_course(way_ID, course_ID):
     from datetime import date
     from datetime import datetime
     from datetime import timedelta
+    from bin.control import Early_days
 
     now = datetime.now()
 
