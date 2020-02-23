@@ -24,7 +24,7 @@
 
     如需开机自启请复制main.py的快捷方式至 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
     
-## 管理员
+## 开发测试
     
     \bin\control.py 中有三个Early的功能是用来做时间测试的。
     可将当前时间设为实际时间的Early_days天后，Early_hours小时后，Early_minute分钟后
