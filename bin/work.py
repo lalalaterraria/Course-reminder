@@ -101,7 +101,7 @@ def get_course(way_ID, course_ID):
 
         # print(now_w, day_w)
 
-        if now_w[0]==day_w[0] and (way_ID==2 and now_w[1]<=day_w[1] or way_ID==1 and now_w[1]==day_w[1]):
+        if way_ID==3 and int(now_w[0])+1==int(day_w[0]) or now_w[0]==day_w[0] and (way_ID==2 and now_w[1]<=day_w[1] or way_ID==1 and now_w[1]==day_w[1]):
             ret.append(_)
 
     return ret
@@ -114,13 +114,14 @@ if __name__ == '__main__':
         print("请输入查询方式ID：")
         print("\tID=1:查询当天课程")
         print("\tID=2:查询本周课程")
+        print("\tID=3:查询下周课程")
 
         y=input()
         while(y==""):y=input()
 
         y=int(y)
 
-        if y<1 or y>2:
+        if y<1 or y>3:
             continue
 
         tmp = get_course(y, 0)
