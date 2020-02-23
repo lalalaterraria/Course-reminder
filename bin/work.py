@@ -126,7 +126,7 @@ if __name__ == '__main__':
         tmp = get_course(y, 0)
 
         if len(tmp) == 0:
-            print("今日" if y == 1 else "本周" + "无课程")
+            print(("今日" if y == 1 else "本周") + "无课程")
 
         tmp.sort()
 
