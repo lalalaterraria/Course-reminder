@@ -32,4 +32,4 @@
 ## 开发测试
     
     \bin\control.py 中有三个Early的功能是用来做时间模拟测试的。
-    可将当前时间设为实际时间的Early_days天后，Early_hours小时后，Early_minute分钟后
+    可将当前时间设为实际时间的Early_days天后，Early_hours小时后，Early_minutes分钟后
